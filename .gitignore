@@ -1,0 +1,86 @@
+# Compiled source files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages and archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor and IDE files
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*.vscode
+.idea/
+.vscode/
+
+# Dependencies
+node_modules/
+bower_components/
+vendor/
+
+# Build and dist folders
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Personal notes and TODO files
+notes.txt
+todo.txt
+
+# Other files and folders
+*.bak
+*.tmp
+*.temp
+*.log
+*.orig
+*.rej
+*.pid
+*.seed
+*.swp
+*.swo
+*.vi
+*~
+.DS_Store
+.sass-cache
+.cache
+.project
+.settings
+.tmproj
+.eslintcache
+.nyc_output
+coverage
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
