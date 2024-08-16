@@ -17,16 +17,6 @@
         .group a:hover {
             text-decoration: underline;
         }
-        #resumeContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full viewport height */
-        }
-        iframe {
-            max-width: 100%;
-            max-height: 100%;
-        }
     </style>
 </head>
 <body>
@@ -38,6 +28,7 @@
                     <div class="group relative">
                         <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                     </div>
+
                     <div class="group relative">
                         <a href="AboutMe.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                     </div>
@@ -57,15 +48,9 @@
     </header>
     <div class="flex-grow container mx-auto mt-10 mb-5"></div>
         <main class="container mx-auto px-6 py-8">
-            <h1 class="text-4xl font-bold mb-4">Welcome to My Professional Website</h1>
-            <section id="resume" class="mt-8">
-                <h2 class="text-2xl font-bold mb-4">My Resume</h2>
-                <div id="resumeContent" class="bg-white p-6 rounded-lg shadow-md">
-                    <!-- Resume content will be inserted here -->
-                    <iframe style="width: 900px; height: 900px;" src="Resume.pdf" frameborder="0"></iframe>
-                </div>    
-            </section>
-        </main>
+            <h3 class="text-4xl font-bold mb-4">Welcome to My Software Development Projects</h3>
+            
+        </main> 
     </div>
     <footer class="flex flex-col bg-gray-800 text-white p-4 text-center">
         <p>&copy; 2024 Jacob Kidd. All Rights Reserved.</p>
@@ -103,7 +88,7 @@
                 dropdown.addEventListener('mouseleave', function() {
                     timer = setTimeout(function() {
                         submenu.classList.add('hidden');
-                    }, 500);
+                    }, 200);
                 });
 
                 submenu.addEventListener('mouseenter', function() {
