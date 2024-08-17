@@ -14,8 +14,27 @@
             transform: translateX(-50%);
             left: 50%;
         }
-        .group a:hover {
-            text-decoration: underline;
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #cbd5e0;
+        }
+
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #cbd5e0;
+            transform-origin: bottom left;
+            transition: transform 0.25s ease-out;
+        }
+
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
         }
         #resumeContent {
             white-space: pre-wrap;
@@ -40,34 +59,57 @@
             font-weight: bold;
         }
     </style>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/favicon.png">
 </head>
 <body>
     <header class="bg-gray-800">
-        <nav class="container mx-auto px-6 py-4">
+        <nav class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer transform hover:scale-105">
-                    <span className="text-6xl font-extrabold text-white italic tracking-tighter">j</span>
-                  </div>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer">
+                        <span class="text-3xl font-extrabold text-white italic tracking-tighter">j</span>
+                    </div>
+                </div>
+                
+                <!-- Hamburger menu button (visible on mobile) -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none focus:text-white">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Full menu (visible on larger screens) -->
                 <div class="hidden md:flex space-x-6">
-                    <div class="group relative">
-                        <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    </div>
-                    <div class="group relative">
-                        <a href="AboutMe.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                    </div>
-                    <div class="group relative">
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Projects</a>
-                        <div class="submenu absolute z-10 hidden group-hover:block bg-white shadow-lg rounded-md mt-2">
+                    <a href="index.html" class="hover-underline-animation text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="AboutMe.html" class="hover-underline-animation text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    <div class="relative group">
+                        <a href="#" class="hover-underline-animation text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Projects</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Web Development</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Software Development</a>
+                            <a href="SoftwareDev.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Software Development</a>
                         </div>
                     </div>
-                    <div class="group relative">
-                        <a href="contact.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
+                    <a href="contact.html" class="hover-underline-animation text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu (hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="AboutMe.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">My Projects</a>
+                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Full Stack Development</a>
+                    <a href="SoftwareDev.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Software Development</a>
+                    <a href="contact.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
                 </div>
             </div>
         </nav>
+    </header>
     </header>
     <div class="flex-grow container mx-auto mt-10 mb-5"></div>
     <div class="lg:flex lg:space-x-8">
@@ -166,6 +208,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             const dropdowns = document.querySelectorAll('.group');
             let timer;
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
 
             dropdowns.forEach(function(dropdown) {
                 const submenu = dropdown.querySelector('.submenu');
